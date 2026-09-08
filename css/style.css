@@ -1,0 +1,55 @@
+html, body { height: 100%; }
+.font-800 { font-weight: 800; }
+.font-700 { font-weight: 700; }
+.font-600 { font-weight: 600; }
+body {
+  background:
+    radial-gradient(1200px 600px at 15% -10%, #ede9fe 0%, transparent 55%),
+    radial-gradient(1000px 600px at 110% 110%, #fce7f3 0%, transparent 50%),
+    #eef1f6;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.phone {
+  width: 375px;
+  height: 750px;
+  border-radius: 44px;
+  box-shadow: 0 30px 60px -18px rgba(15,23,42,.45), 0 0 0 10px #0b1020, 0 0 0 11px #1e293b;
+  position: relative;
+  overflow: hidden;
+  background: #F8FAFC;
+}
+.screen { scrollbar-width: none; }
+.screen::-webkit-scrollbar { display: none; }
+
+.view { animation: fade .32s ease both; }
+@keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+.nav-active svg { transform: translateY(-1px); }
+
+.blade-lines::before,
+.blade-lines::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.9), rgba(255,255,255,0));
+}
+.blade-lines::before { width: 60px; top: 26%; right: 18px; transform: rotate(-14deg); }
+.blade-lines::after { width: 40px; top: 40%; right: 34px; transform: rotate(-14deg); opacity:.6; }
+
+.size-pill { transition: transform .12s ease, background .12s ease, color .12s ease, box-shadow .12s ease; }
+.size-pill:active { transform: scale(.94); }
+.press { transition: transform .12s ease; }
+.press:active { transform: scale(.97); }
+
+.modal-wrap { transition: opacity .25s ease; }
+.modal-card { animation: sheet .3s cubic-bezier(.16,1,.3,1) both; }
+@keyframes sheet { from { transform: translateY(30px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+.toast { animation: toastIn .3s ease both; }
+@keyframes toastIn { from { transform: translate(-50%, 20px); opacity: 0; } to { transform: translate(-50%, 0); opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .view, .modal-card, .toast { animation: none !important; }
+}
